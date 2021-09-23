@@ -54,10 +54,10 @@ module top_module(
     //so we need to reset the bits to avoid the previous result's affection.
     always @(posedge clk) begin
         case (nextstate)
-			idle : oddreset <= 1;	
-			stop : oddreset <= 1;
-			default : oddreset <= 0;
-		endcase
+	    idle : oddreset <= 1;	
+	    stop : oddreset <= 1;
+	    default : oddreset <= 0;
+	endcase
     end
     
     assign done = (state == stop) && odd;
